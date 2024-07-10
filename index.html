@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>path of neki </title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Light grey background */
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 50px;
+            background-color: #90ee90; /* Light green background */
+            color: white;
+            padding: 0 15px;
+            position: relative;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .menu-button, .close-button {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 24px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .menu-button div, .close-button div {
+            height: 3px;
+            background-color: white;
+        }
+
+        .menu-button {
+            flex-direction: column;
+        }
+
+        .close-button {
+            display: none;
+            color: white;
+            font-size: 24px;
+            line-height: 18px;
+            cursor: pointer;
+        }
+
+        .menu {
+            position: fixed;
+            top: 0;
+            right: -60%;
+            width: 60%;
+            height: 100%;
+            background-color: green; /* Green background */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: right 0.5s ease-in-out;
+            z-index: 1000;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .menu.active {
+            right: 0;
+        }
+
+        .menu.active .close-button {
+            display: block;
+        }
+
+        .menu.active .menu-button {
+            display: none;
+        }
+
+        .box-container {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .box {
+            height: 100px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 128, 0, 0.2); /* Green shadow */
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .box img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        em {
+            display: block;
+            text-align: center;
+            font-size: 24px;
+            color: #fff; /* White text color */
+            background-color: #90ee90; /* Light green background color */
+            padding: 10px;
+            border-radius: 5px;
+            margin: 0 auto;
+            width: fit-content;
+        }
+    </style>
+</head>
+<body onclick="closeMenu(event)">
+
+    <div class="navbar">
+        <h1>Path of neki </h1>
+        <div class="menu-button" onclick="toggleMenu(event)">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="close-button" onclick="toggleMenu(event)">
+            ×
+        </div>
+    </div>
+
+    <div class="menu" id="menu">
+        <a href="https://www.instagram.com" target="_blank">Follow us on Instagram</a>
+        <a href="https://www.facebook.com" target="_blank">Follow us on Facebook</a>
+        <a href="https://www.twitter.com" target="_blank">Follow us on Twitter</a>
+    </div>
+
+    <div class="box-container">
+        <a href="dua.html">
+            <div class="box">
+                <img src="https://i.ibb.co/d0LN05K/1720505281524.jpg" alt="Placeholder Image">
+            </div>
+        </a>
+        <a href="namaz.html">
+            <div class="box">
+                <img src="https://i.ibb.co/R9fJx9N/1720505306177.jpg" alt="Placeholder Image">
+            </div>
+        </a>
+        <a href="hadees.html">
+            <div class="box">
+                <img src="https://i.ibb.co/4sfH5KW/1720601773093.jpg" alt="Placeholder Image">
+            </div>
+        </a>
+         <a href="qibla.html">
+            <div class="box">
+                <img src="https://i.ibb.co/47vJpQh/1720507058999.jpg" alt="Placeholder Image">
+            </div>
+        </a>
+         <a href="time.html">
+            <div class="box">
+                <img src="https://i.ibb.co/2KZxkCH/1720601820424.jpg" alt="Placeholder Image">
+            </div>
+        </a>
+         <a href="ask.html">
+            <div class="box">
+                <img src="https://i.ibb.co/VHjxVmV/1720601800471.jpg" alt="Placeholder Image">
+            </div>
+        </a>
+         
+        
+        <!-- Add more boxes as needed -->
+    </div>
+    <em>by maviya</em>
+
+    <script>
+        function toggleMenu(event) {
+            event.stopPropagation();
+            var menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+
+        function closeMenu(event) {
+            var menu = document.getElementById('menu');
+            if (menu.classList.contains('active') && !menu.contains(event.target)) {
+                menu.classList.remove('active');
+            }
+        }
+    </script>
+
+</body>
+</html>
