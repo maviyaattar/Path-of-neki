@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sahih al-Bukhari Hadith</title>
+    <title>Qibla Finder</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,33 +12,33 @@
             padding: 20px;
         }
         
-        .hadith-container {
+        .container {
+            max-width: 800px;
+            margin: auto;
             background-color: white;
             padding: 20px;
-            margin-bottom: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .hadith {
-            margin-top: 20px;
+        h2 {
+            color: #2c3e50;
+            text-align: center;
         }
 
-        .hadith p {
-            margin: 10px 0;
-        }
-        button{
-            background-color:#e0f7e0;
+        .iframe-container {
+            margin-top: 20px;
+            border: none;
+            width: 100%;
+            height: 600px;
         }
     </style>
 </head>
 <body>
-    <div class="hadith-container">
-        <h2>Qibla finder</h2>
-        <div class="hadith">
-            <h3>click on check </h3>
-           <a href="https://qiblafinder.withgoogle.com/intl/en/onboarding/position"><button >check</button>
-           </a> 
+    <div class="container">
+        <h2>Qibla Finder</h2>
+        <div class="iframe-container">
+            <iframe src="https://qiblafinder.withgoogle.com/intl/en/onboarding/position" width="100%" height="600" style="border:none;"></iframe>
         </div>
     </div>
 </body>
